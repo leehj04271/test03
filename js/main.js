@@ -95,7 +95,7 @@ const getHtmlText = () => {
 
         const htmlText =
     `<div class="subway-map" data-columns="15" data-rows="24" data-cellSize="50" data-legendId="legend"
-data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
+data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="8">
 
 <ul data-color="#82eca7" data-label="jQuery Widgets">
 ${lisMobile.join('')}
