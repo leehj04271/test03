@@ -5,7 +5,7 @@ input { border: none; }
 
 
 body {
-  background-image: url('./img/77254_27169_036.jpg');
+  background-image: url(../img/77254_27169_036.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
