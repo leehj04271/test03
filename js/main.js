@@ -165,7 +165,7 @@ window.onresize = () => {
 $('#wrap').on('click', '.subway-map .text', function (e) {
 
     e.preventDefault();
-    var statn_nm = $(this).text().slice(1, -1)
+  var statn_nm = $(this).text().slice(1, -1).trim()
     console.log(statn_nm)
     localStorage.recentSearch = JSON.stringify(statn_nm)
 
