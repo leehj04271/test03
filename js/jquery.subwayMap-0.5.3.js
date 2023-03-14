@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 Copyright (c) 2010 Nik Kalyani nik@kalyani.com http://www.kalyani.com
 
@@ -52,8 +52,7 @@ THE SOFTWARE.
                 this._log(s);
         },
         _log: function () {
-            if (window.console && window.console.log)
-                {/* window.console.log('[subwayMap] ' + Array.prototype.join.call(arguments, ' ')); */}
+            if (window.console && window.console.log) {/* window.console.log('[subwayMap] ' + Array.prototype.join.call(arguments, ' ')); */ }
         },
         _supportsCanvas: function () {
             var canvas = $("<canvas></canvas>");
@@ -129,6 +128,7 @@ THE SOFTWARE.
             var lineLabels = [];
             var supportsCanvas = $("<canvas></canvas>")[0].getContext;
             if (supportsCanvas) {
+                this._drawBg(el);
 
                 if (grid) this._drawGrid(el, scale, gridNumbers);
                 $(el).children("ul").each(function (index) {
@@ -257,14 +257,52 @@ THE SOFTWARE.
 
             }
         },
+
+        _drawBg: function (el) {
+
+            console.log('hi')
+
+            if ($(window).width() > 768) {
+                var ctx = this._getCanvasLayer(el, false);
+                var background = new Image();
+                background.src = '../img/bg.png'
+
+
+                background.onload = function () {
+                    //이미지, x좌표, y좌표, 가로크기, 세로크기 
+                    ctx.drawImage(background, -40, -100);
+                }
+            }
+
+
+
+        },
         _drawLine: function (el, scale, rows, columns, color, textClass, width, nodes, reverseMarkers, dotted) {
 
+
+            /* 
+                        var background = new Image();
+                        background.src = '../img/bg.png'
+                       
+            
+                        background.onload = function(){
+                              //이미지, x좌표, y좌표, 가로크기, 세로크기 
+                              ctx.drawImage(background,-40,-100); 
+                        }
+             */
+
+
             var ctx = this._getCanvasLayer(el, false);
+
+
+
+
             ctx.beginPath();
             ctx.moveTo(nodes[0].x * scale, nodes[0].y * scale);
             var markers = [];
             var lineNodes = [];
             var node;
+
             for (node = 0; node < nodes.length; node++) {
                 if (nodes[node].marker.indexOf("@") != 0)
                     lineNodes[lineNodes.length] = nodes[node];
@@ -372,11 +410,14 @@ THE SOFTWARE.
             ctx.lineWidth = width;
             ctx.stroke();
 
+
+
             ctx = this._getCanvasLayer(el, true);
             for (node = 0; node < nodes.length; node++) {
                 if (textClass != false)
                     this._drawMarker(el, ctx, scale, color, textClass, width, nodes[node], reverseMarkers);
             }
+
 
 
         },
@@ -401,6 +442,10 @@ THE SOFTWARE.
             ctx.strokeStyle = fgColor;
             ctx.fillStyle = bgColor;
             ctx.beginPath();
+
+
+
+
             switch (data.marker.toLowerCase()) {
                 case "interchange":
                 case "@interchange":
@@ -478,10 +523,15 @@ THE SOFTWARE.
         },
         _drawGrid: function (el, scale, gridNumbers) {
 
+
             var ctx = this._getCanvasLayer(el, false);
+
+
             ctx.fillStyle = "#000";
             ctx.beginPath();
             var counter = 0;
+
+
             for (var x = 0.5; x < this.options.pixelWidth; x += scale) {
                 if (gridNumbers) {
                     ctx.moveTo(x, 0);
@@ -518,6 +568,11 @@ THE SOFTWARE.
         init: function (options) {
 
             plugin.options = $.extend({}, plugin.defaults, options);
+
+
+
+
+
             // iterate and reformat each matched element
             return this.each(function (index) {
 
@@ -534,11 +589,16 @@ THE SOFTWARE.
 
         },
         drawLine: function (data) {
+            console.log('hiii')
             plugin._drawLine(data.element, data.scale, data.rows, data.columns, data.color, data.width, data.nodes);
-        }
+
+        },
+
     };
 
     $.fn.subwayMap = function (method) {
+
+
 
         // Method calling logic
         if (methods[method]) {
