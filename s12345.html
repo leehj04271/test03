@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Subway Map</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/jquery.subwayMap-0.5.3.js"></script>
+  <style type="text/css">
+    body {
+      font-family: Verdana;
+      font-size: 8pt;
+    }
+
+    /* The main DIV for the map */
+    .subway-map {
+      margin: 0;
+      width: 500px;
+      height: 410px;
+      background-color: white;
+    }
+
+    /* Text labels */
+    .text {
+      text-decoration: none;
+      color: black;
+    }
+
+    #legend {
+      float: left;
+      width: 250px;
+      height: 400px;
+    }
+
+    #legend div {
+      height: 25px;
+    }
+
+    #legend span {
+      margin: 5px 5px 5px 0;
+    }
+
+    .subway-map span {
+      margin: 5px 5px 5px 0;
+    }
+
+    a {
+      z-index: 1500 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subway-map" data-columns="110" data-rows="100" data-cellSize="50" data-legendId="legend"
+    data-textClass="text" data-gridNumbers="false" data-grid="false" data-lineWidth="8">
+    <ul class="line" id="line0" data-color="#36AEFF">
+      <li data-coords="3,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto</a></li>
+      <li data-coords="3,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto</a></li>
+      <li data-coords="4,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">A</a></li>
+      <li data-coords="5,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Au</a></li>
+      <li data-coords="6,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Aut</a></li>
+      <li data-coords="7,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">A</a></li>
+      <li data-coords="8,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto</a></li>
+      <li data-coords="9,2" data-dir="E"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">THAT</a></li>
+      <li data-coords="10,3" data-dir="E"><a href="http://jqueryui.com/demos/autocomplete/"><a
+            href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,1" data-dir="E"><a href="http://jqueryui.com/demos/autocomplete/"><a
+            href="#">Auto\ncomplete</a></li>
+
+      <li data-coords="10,5" data-dir="E"><a href="http://jqueryui.com/demos/autocomplete/"><a
+            href="#">Auto\ncomplete</a></li>
+
+      <li data-coords="10,1" data-dir="E"><a href="http://jqueryui.com/demos/autocomplete/"><a
+            href="#">Auto\ncomplete</a></li>
+
+      <li data-coords="10,2"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,3"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,4"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,5"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,6"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,7"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,8"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="10,9"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+
+
+
+      <li data-coords="9,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">a</a></li>
+      <li data-coords="8,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">b</a></li>
+      <li data-coords="7,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">c</a></li>
+      <li data-coords="6,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">d</a></li>
+      <li data-coords="5,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">e</a></li>
+      <li data-coords="4,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="3,10"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto</a></li>
+
+
+      <li data-coords="2,9" data-dir="W"><a href="http://jqueryui.com/demos/autocomplete/">Auto\ncomplete</li>
+      <li data-coords="2,7"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="2,6"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="2,5"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="2,4"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="2,3"><a href="http://jqueryui.com/demos/autocomplete/"><a href="#">Auto\ncomplete</a></li>
+      <li data-coords="3,2"></li>
+
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    const ul = document.getElementById("line");
+
+
+    $(".subway-map").subwayMap({
+      debug: true
+    });
+  </script>
+</body>
+
+</html>

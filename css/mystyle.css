@@ -1,0 +1,23 @@
+#wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #222;
+}
+
+.nav {
+  width: 550px;
+  position: absolute;
+  right: 100px;
+  top: 0;
+  border: 1px solid dodgerblue;
+}
+.nav .depth1 {
+  position: absolute;
+  display: flex;
+}
+.nav .depth1 .li {
+  border: 1px solid pink;
+  flex: 0 1 0;
+  height: 50px;
+}/*# sourceMappingURL=mystyle.css.map */
