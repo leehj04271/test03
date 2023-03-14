@@ -1,24 +1,66 @@
 const lisMobile = line2.map((station, i) => {
 
-    if (i < 15) {
-        return `<li data-coords="${i + 7}, 4">
+
+    if (i < 4) {
+        return `<li data-coords="${2 * i + 5}, 2" data-labelpos="N">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
-    } else if (i < 20) {
-        return `<li data-coords="${10 + (i - 19) * 2} , 18">
-<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
-</li>`
-    } else if (i < 37) {
-        return `<li data-coords="11, ${10 - (i - 28)}">
-<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
-</li>`
-    } else if (i < 45) {
-        return `<li data-coords="${10 - (i - 37)}, 2">
-<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
-</li>`
+
+    }
+
+    else if (i < 21) {
+        return `<li data-coords="12, ${i - 1}" data-dir="E" data-labelpos="W">
+        <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+        </li>`
+
+
+    }
+
+    else if (i < 25) {
+        return `<li data-coords="${-(i * 2) + 53}, 20" data-dir="S" data-labelpos="S">
+        <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+        </li>`
+    }
+
+    else if (i < 42) {
+        return `<li data-coords="4, ${44 - i}" data-dir="W" data-labelpos="E">
+        <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+        </li>`
+    }
+    else if (i < 43) {
+        return `<li data-coords="5,2">
+    
+        </li>`
     }
 
 })
+
+
+
+const coda1 = line2.map((station, i) => {
+    if (i === 41) {
+        return `<li data-coords="12, 9"></li>`
+    }
+    if (i > 42 && i < 46) {
+        return `<li data-coords="13, ${11 + 40 - i}" data-dir="E" data-labelpos="E">
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+</li>`
+    }
+})
+
+
+const coda2 = line2.map((station, i) => {
+    if (i === 46) {
+        return `<li data-coords="4, 11"></li>`
+    }
+    if (i > 46) {
+        return `<li data-coords="3, ${11 - 46 + i}" data-dir="W" data-labelpos="W">
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+</li>`
+    }
+})
+
+
 
 const lisPc = line2.map((station, i) => {
 
@@ -59,10 +101,18 @@ data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="
 ${lisMobile.join('')}
 </ul>
 
-<ul data-color="#82eca7" data-label="jQuery Widgets">
-<li data-coords="2,6"></li>
-<li data-coords="2,2"> <a href="#"></a></li>
-<li data-coords="3,2"> <a href="#"></a></li>
+<ul data-color="#82eca7">
+
+${coda1.join('')}
+
+
+</ul>
+
+<ul data-color="#82eca7">
+
+${coda2.join('')}
+
+
 </ul>
 
 
