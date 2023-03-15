@@ -195,17 +195,45 @@ window.onresize = () => {
     update()
 };
 
+let RSid = 0;
+let recentSearch = [];
 
+if (localStorage.recentSearch) {
+    recentSearch = JSON.parse(localStorage.recentSearch)
+    if (recentSearch) {
+        RSid = recentSearch[recentSearch.length - 1]['id']
+    }
+}
 
 
 $('#wrap').on('click', '.subway-map .text', function (e) {
+e.preventDefault();
 
-    e.preventDefault();
-  var statn_nm = $(this).text().slice(1, -1).trim()
+
+    const statn_nm = $(this).text().slice(1, -1).trim()
+
+
+    RSid++
+
+    const obj = {id: RSid, text: statn_nm}
+    console.log(recentSearch)
+    recentSearch.push(obj)
+    if(recentSearch.length> 5){
+        recentSearch.shift()
+
+    }
+
+    console.log(recentSearch)
+
+    localStorage.recentSearch = JSON.stringify(recentSearch)
+
+
+
+
+
     console.log(statn_nm)
-    localStorage.recentSearch = JSON.stringify(statn_nm)
 
-    const state = { statn_nm: statn_nm };
+    const state = {statn_nm: statn_nm};
 
     history.pushState(state, null);
 
