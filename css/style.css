@@ -11,10 +11,25 @@ body {
 #wrap {
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
-  background-image: url(../img/bgmap.png) no-repeat;
-  background-position: center;
 }
+
+
+@media screen and (min-width : 768px) {
+
+  #wrap.main {
+    
+  display: flex;
+  justify-content: center;
+  }
+  #wrap.main #map-wrapper {
+    width: 1500px;
+  }
+
+}
+
+
+
+
 
 /* nav */
 
