@@ -123,7 +123,10 @@ const getHtmlText = () => {
 
 
         const htmlText =
-    `<div class="subway-map" data-columns="15" data-rows="24" data-cellSize="50" data-legendId="legend"
+    `
+     <div id="map-wrapper">
+    
+    <div class="subway-map" data-columns="15" data-rows="24" data-cellSize="50" data-legendId="legend"
 data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="8">
 
 <ul data-color="#82eca7" data-label="jQuery Widgets">
@@ -145,7 +148,9 @@ ${coda2.join('')}
 </ul>
 
 
-</div>`
+</div>
+</div>
+`
 
         return htmlText
 
@@ -153,6 +158,7 @@ ${coda2.join('')}
 
 
         const htmlText = `
+         <div id="map-wrapper">
 <div class="subway-map" data-columns="68" data-rows="40" data-cellSize="24" data-legendId="legend"
 data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
 
@@ -171,6 +177,8 @@ data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8
     <li data-coords="21,10"></li>
     <li data-coords="23,10"></li>
 </ul>
+
+</div>
 
 </div>`
         return htmlText
