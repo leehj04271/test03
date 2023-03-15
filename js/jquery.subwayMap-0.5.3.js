@@ -270,7 +270,7 @@ THE SOFTWARE.
 
                 background.onload = function () {
                     //이미지, x좌표, y좌표, 가로크기, 세로크기 
-                    ctx.drawImage(background, 0 ,-100);
+                    ctx.drawImage(background, 0 ,-210);
                 }
             }
 
