@@ -97,7 +97,7 @@ const coda3 = line2.map((station, i) => {
         return `<li data-coords="51, 12"></li>`
     }
     if (i > 42 && i < 46) {
-        return `<li data-coords="${(60-i)*3},8" data-dir="E" data-labelpos="E">
+        return `<li data-coords="${(60-i)*3},7" data-dir="E" data-labelpos="E">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
     }
@@ -156,20 +156,20 @@ ${coda2.join('')}
 <div class="subway-map" data-columns="68" data-rows="40" data-cellSize="24" data-legendId="legend"
 data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
 
-<ul data-color="#82eca7" data-label="jQuery Widgets">
+<ul data-color="#82eca7" data-label="jQuery Widgets" data-shiftCoords="-3,0">
     ${lisPc.join('')}
 </ul>
 
-<ul data-color="#82eca7">
+<ul data-color="#82eca7" data-shiftCoords="-3,0">
     ${coda3.join('')}
 </ul>
-<ul data-color="#82eca7">
+<ul data-color="#82eca7" data-shiftCoords="-3,0">
     ${coda4.join('')}
 </ul>
 
-<ul data-color="#82eca7">
-    <li data-coords="21,11"></li>
-    <li data-coords="23,11"></li>
+<ul data-color="#82eca7" data-shiftCoords="-3,0">
+    <li data-coords="21,10"></li>
+    <li data-coords="23,10"></li>
 </ul>
 
 </div>`
