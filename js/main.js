@@ -64,26 +64,55 @@ const coda2 = line2.map((station, i) => {
 
 const lisPc = line2.map((station, i) => {
 
-    if (i < 9) {
-        return `<li data-coords="${10 + i * 2}, 4">
+    if (i < 10) {
+        return `<li data-coords="${23 + i * 3}, 10"  data-dir="S">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
-    } else if (i < 19) {
-        return `<li data-coords=" 27, ${5 + (i - 9)}">
+    } else if (i < 14) {
+        return `<li data-coords=" 51, ${11 + (i -10)*2.5}" data-dir="E">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
-    } else if (i < 32) {
-        return `<li data-coords="${26 - (i - 19) * 2}, 15 ">
+    }
+    else if (i < 19) {
+        return `<li data-coords=" 51, ${11 + (i - 10)*2.5}" data-dir="N">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
-    } else if (i < 39) {
-        return `<li data-coords="2, ${9 - (i - 37)}">
+    }
+    else if (i < 31) {
+        return `<li data-coords="${50 - (i - 19) * 3}, 32"  data-dir="S">
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+</li>`
+    } else if (i < 40) {
+        return `<li data-coords="16, ${16.2- (i - 37)*2.4}"  data-dir="W">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
     } else if (i < 43) {
-        return `<li data-coords="${2 + (i - 39) * 2}, 4">
+        return `<li data-coords="${15+ (i - 39)*2 }, 10"  data-dir="N">
 <a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`}
+})
+
+const coda3 = line2.map((station, i) => {
+    if (i === 41) {
+        return `<li data-coords="51, 12"></li>`
+    }
+    if (i > 42 && i < 46) {
+        return `<li data-coords="${(60-i)*3},8" data-dir="E" data-labelpos="E">
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+</li>`
+    }
+})
+
+
+const coda4 = line2.map((station, i) => {
+    if (i === 46) {
+        return `<li data-coords="16, 26"></li>`
+    }
+    if (i > 46) {
+        return `<li data-coords="13, ${26+(47-i)*3}" data-dir="W" data-labelpos="W">
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
+</li>`
+    }
 })
 
 
