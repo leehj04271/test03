@@ -81,5 +81,20 @@
             </div>
         </section>
     </div>
+
+  <script defer>
+        function activeLink(e) {
+            $("#wrap").load('./login.html');
+
+            return false;
+
+
+        }
+
+
+
+        $('#wrap').on('click', '.btn button', activeLink)
+
+    </script>
 </body>
 </html>
