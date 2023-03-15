@@ -159,7 +159,7 @@ ${coda2.join('')}
 
         const htmlText = `
          <div id="map-wrapper">
-<div class="subway-map" data-columns="65" data-rows="40" data-cellSize="24" data-legendId="legend"
+<div class="subway-map" data-columns="62" data-rows="40" data-cellSize="24" data-legendId="legend"
 data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
 
 <ul data-color="#82eca7" data-label="jQuery Widgets" data-shiftCoords="-3,0">
