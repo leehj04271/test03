@@ -157,14 +157,19 @@ ${coda2.join('')}
 data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
 
 <ul data-color="#82eca7" data-label="jQuery Widgets">
-${lisPc.join('')}
+    ${lisPc.join('')}
 </ul>
 
 <ul data-color="#82eca7">
-${coda3.join('')}
+    ${coda3.join('')}
 </ul>
 <ul data-color="#82eca7">
-${coda4.join('')}
+    ${coda4.join('')}
+</ul>
+
+<ul data-color="#82eca7">
+    <li data-coords="21,11"></li>
+    <li data-coords="23,11"></li>
 </ul>
 
 </div>`
