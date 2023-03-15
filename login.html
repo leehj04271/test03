@@ -38,5 +38,19 @@
             </form>
         </div>
     </div>
+     <script defer>
+        function activeLink(e) {
+            $("#wrap").load('./join.html');
+
+            return false;
+
+
+        }
+
+
+
+        $('#wrap').on('click', '.atext a', activeLink)
+
+    </script>
 </body>
 </html>
